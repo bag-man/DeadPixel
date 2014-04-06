@@ -9,7 +9,7 @@ public class DeadPixel extends JDialog {
     x = 0 + (int)(Math.random() * ((x - 0) + 1));
     y = 0 + (int)(Math.random() * ((y - 0) + 1));
     setType(Type.UTILITY);
-    setSize(1, 1);
+    setSize(10, 10);
     setLocation(x,y);
     setResizable(false); 
     setUndecorated(true);

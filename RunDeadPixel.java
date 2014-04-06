@@ -1,22 +1,24 @@
-import javax.swing.JDialog;
-import java.awt.Color;
-import java.util.Random;
+import javax.swing.SwingUtilities;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 
-public class DeadPixel extends JDialog {
+public class RunDeadPixel {
 
-  public DeadPixel(int x, int y) {
+  private static int width, height;
 
-    x = 0 + (int)(Math.random() * ((x - 0) + 1));
-    y = 0 + (int)(Math.random() * ((y - 0) + 1));
-    setType(Type.UTILITY);
-    setSize(1, 1);
-    setLocation(x,y);
-    setResizable(false); 
-    setUndecorated(true);
-    setDefaultCloseOperation(DISPOSE_ON_CLOSE);  
-    setAlwaysOnTop(true);
-    getContentPane().setBackground(Color.BLACK);
+  public static void main(String[] args) {
+
+    Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+    width = (int) Math.round(screenSize.getWidth());
+    height = (int) Math.round(screenSize.getHeight());
+
+    SwingUtilities.invokeLater(new Runnable() {
+      @Override
+      public void run() {
+	DeadPixel pixel = new DeadPixel(width, height);
+	pixel.setVisible(true);
+      }
+    });
 
   }
-
 }
