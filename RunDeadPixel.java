@@ -4,8 +4,6 @@ import java.awt.Toolkit;
 
 public class RunDeadPixel {
 
-  private int width, height;
-
   public static void main(String[] args) {
 
     SwingUtilities.invokeLater(new Runnable() {
