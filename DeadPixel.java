@@ -3,7 +3,6 @@ import java.awt.Color;
 import java.util.Random;
 
 public class DeadPixel extends JDialog {
-
   public DeadPixel(int x, int y) {
     x = 0 + (int)(Math.random() * ((x - 0) + 1));
     y = 0 + (int)(Math.random() * ((y - 0) + 1));
@@ -16,6 +15,4 @@ public class DeadPixel extends JDialog {
     setAlwaysOnTop(true);
     getContentPane().setBackground(Color.BLACK);
   }
-
-
 }
