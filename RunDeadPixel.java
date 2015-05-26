@@ -10,7 +10,8 @@ public class RunDeadPixel {
 
       @Override
       public void run() {
-
+	int x =1000;
+	for (int y = 0; y<x; y++){
         // I feel that this is horribly inneficient, but without making it static I can't find a way round.
 	Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 	int width = (int) Math.round(screenSize.getWidth());
@@ -18,6 +19,9 @@ public class RunDeadPixel {
 
 	DeadPixel pixel = new DeadPixel(width, height);
 	pixel.setVisible(true);
+	TimeUnit.MINUTES.sleep(1);
+		
+	}
       }
     });
 
